@@ -7,12 +7,17 @@
 ```css
 .foo {
   /* Input example */
+  --empty-css-var: ;
+  --css-var: 1px;
+  color: #000;
 }
 ```
 
 ```css
 .foo {
   /* Output example */
+  --css-var: 1px;
+  color: #000;
 }
 ```
 
