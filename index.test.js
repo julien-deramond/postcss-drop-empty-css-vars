@@ -8,10 +8,14 @@ async function run (input, output, opts = { }) {
   expect(result.warnings()).toHaveLength(0)
 }
 
-/* Write tests here
-
-it('does something', async () => {
-  await run('a{ }', 'a{ }', { })
+it('keep CSS', async () => {
+  await run('a{ color: #000; }', 'a{ color: #000; }', { })
 })
 
-*/
+it('keep CSS var', async () => {
+  await run('a{ --test: 1px; }', 'a{ --test: 1px; }', { })
+})
+
+it('remove empty CSS var', async () => {
+  await run('a{ color: #fd0; --test: 1px; --test-2: ; }', 'a{ color: #fd0; --test: 1px; }', { })
+})
