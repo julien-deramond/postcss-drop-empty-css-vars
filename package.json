@@ -35,6 +35,9 @@
       "jest/expect-expect": "off"
     }
   },
+  "resolutions": {
+    "@tootallnate/once": "^2.0.1"
+  },
   "jest": {
     "coverageThreshold": {
       "global": {
